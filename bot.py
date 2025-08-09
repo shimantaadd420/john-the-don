@@ -1,9 +1,12 @@
+import os
 import discord
 from discord.ext import commands
 import yt_dlp
 import asyncio
 
-token = "YOUR_ACTUAL_TOKEN_HERE "
+token = os.getenv("DISCORD_TOKEN")
+if not token:
+    token = "MTM4ODIyMjY3ODUyMzA1NjE2OA.GQzKAp.zMW9ITcxvcgpRShmP7H6aGAvdITUZ-CLVxWS_Q"  # fallback for local testing only
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="!", intents=intents)
